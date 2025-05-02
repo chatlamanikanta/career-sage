@@ -20,7 +20,7 @@ app.add_middleware(
 model = joblib.load('career_predictor.pkl')
 all_skills = joblib.load('skills_set.pkl')
 
-cohere_api_key=os.getenv("COHERE_API_KEY")
+cohere_api_key=os.getenv("COHERE_API_KEY") #use your cohere_api_key here
 
 co = cohere.Client(cohere_api_key)
 
