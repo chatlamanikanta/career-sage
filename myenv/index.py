@@ -64,7 +64,7 @@ async def details(my_details: Details):
         response = co.generate(
             model='command',  
             prompt=prompt,
-            max_tokens=300,
+            max_tokens=800,
             temperature=0.7
         )
         text=response.generations[0].text.strip()
