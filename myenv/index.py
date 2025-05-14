@@ -49,8 +49,7 @@ async def details(my_details: Details):
         prediction = model.predict(input_data)
 
         prompt = f"""
-            You are an experienced career counselor named "Career Sage".
-
+            You are an experienced career counselor named "Career Sage" for the 12th standard graduates and engineering graduates.
             Student's academic details:
             - Name : {my_details.name}
             - 10th Marks: {my_details.tenth_marks}%
@@ -58,13 +57,13 @@ async def details(my_details: Details):
             - Skills: {', '.join(my_details.selectedSkills)}
             - Predicted Career: {prediction[0]}
 
-            Suggest suitable careers based on this and explain why.
+            Suggest them some suitable careers and suggest them with career guidance.
         """
 
         response = co.generate(
             model='command',  
             prompt=prompt,
-            max_tokens=800,
+            max_tokens=700,
             temperature=0.7
         )
         text=response.generations[0].text.strip()
